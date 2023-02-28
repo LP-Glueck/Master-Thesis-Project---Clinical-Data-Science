@@ -1,6 +1,5 @@
 # Master-Thesis-Project---Clinical-Data-Science
 
-Project Name
 This project involves processing a dataset using R to impute missing values, perform one-hot encoding of categorical variables, and remove irrelevant features. The resulting dataset can then be used for developing predictive models.
 
 Getting Started
