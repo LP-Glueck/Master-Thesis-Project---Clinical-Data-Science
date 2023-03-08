@@ -1,4 +1,4 @@
-### Medication Reconciliation and ML
+# Medication Reconciliation and ML
 
 
 This project is aimed at utilizing machine learning and deep learning to analyze patient data from MUMC (Maastricht University Medical Center) in order to develop models that are capable of stratifying patients into those that require and would benefit from medication reconciliation and those that would not. 
