@@ -1,35 +1,32 @@
-# Master-Thesis-Project---Clinical-Data-Science
+# Medication Reconciliation and ML
 
-This project involves processing a dataset using R to impute missing values, perform one-hot encoding of categorical variables, and remove irrelevant features. The resulting dataset can then be used for developing predictive models.
 
-Getting Started
-To get started, make sure you have the following R packages installed:
+This project is aimed at utilizing machine learning and deep learning to analyze patient data from MUMC (Maastricht University Medical Center) in order to develop models that are capable of stratifying patients into those that require and would benefit from medication reconciliation and those that would not. 
 
-mice
-readxl
-dplyr
+#### Introduction
 
-You can install these packages by running the following commands:
+Medication reconciliation is the process of comparing a patient's medication orders to all of the medications that the patient has been taking, in order to avoid medication errors. However, it has been shown that always performing medication reconciliation does not actually improves patient outcomes, as many patients are not at risk to these kinds or errors. 
 
->>
-install.packages("mice")
-install.packages("readxl")
-install.packages("dplyr")
->> 
+#### Aim
 
-Data
-The dataset used in this project is called "trimmed_compiled_data.csv". It is composed of the results from the pre-processing script, but has been manually filtered in Excel prior to importing it into R.
+This project aims to utulise machine learning and deep learning techniques to analyze patient data from MUMC in order to determine whether we can classify which patients require the tiresome clinical process.
 
-Running the Analysis
-The 2nd R script is called "Correlation_Imputation_Dummy_Encoding.R". It performs the following steps:
+#### Data
 
-Detect and remove missing values through imputation using the MICE package.
-Remove character type features that need to be factorized.
-Perform one-hot encoding of categorical variables after multiple imputation.
-Remove correlated features.
-Convert categorical variables to one-hot encoded binary variables.
-To run the analysis, you just have to change the directories (within script) to where you have the downloaded data stored. 
-The resulting dataset will be saved as a CSV file called "imputed_data_V3csv".
+The data used in this project consists of patient data obtained from MUMC. This is along list of questionnaire data and some more regular demographic and clinical data. There are three main categories of the obtained data, patient-derived data, physician-derived data, and clinical pharmacist- or physician-derived data. These sets of patient data include a variety of continuous, categorical or ordinal data. 
+The main outcomes of the data are whether or not the patient required a medication reconciliation. 
 
-Author
-Liam Glueck  
+#### Scripts
+
+##### The following scripts are included in this project:
+
+- Updated_processing_script.R: This R script cleans and processes the raw patient data to a certain extent. The processed data is then used as input for the Correlation_Imputation_Dummy_Encoding.R script.
+- Correlation_Imputation_Dummy_Encoding.R: This R script performs multivariate imputation by chained equations (MICE) to impute missing values in the processed patient data. The script also performs correlation threshold filtering, removes redundant features, and performs dummy encoding of categorical features. The output is a more prepared dataset for further analysis.
+- RFE_Training.ipynb: This Jupyter notebook performs additional correlation threshold filtering on the prepared dataset, oversamples the minority class using SMOTE variations, performs recursive feature elimination, and trains models. The notebook includes several runs with different training data and feature selection methods.
+
+#### Usage
+
+To use this repository in the correct manner, first run updated_processing_script.R to clean and process the raw patient data to a certain extent.
+Before inputting the data into the next script, it will have to mnually processed a little (done in excel). 
+Then run Correlation_Imputation_Dummy_Encoding.R to perform MICE and other necessary preprocessing steps on the processed data. Finally, RFE_Training.ipynb includes further processing, oversampling, feature selection, and model training.
+
