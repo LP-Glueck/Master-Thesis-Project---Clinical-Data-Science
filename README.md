@@ -27,5 +27,6 @@ The main outcomes of the data are whether or not the patient required a medicati
 #### Usage
 
 To use this repository in the correct manner, first run updated_processing_script.R to clean and process the raw patient data to a certain extent.
-Before inputting the data into the next script, it will have ot mnually processed a little (done in excel). Then run Correlation_Imputation_Dummy_Encoding.R to perform MICE and other necessary preprocessing steps on the processed data. Finally, RFE_Training.ipynb includes further preprocessing, oversampling, feature selection, and model training.
+Before inputting the data into the next script, it will have to mnually processed a little (done in excel). 
+Then run Correlation_Imputation_Dummy_Encoding.R to perform MICE and other necessary preprocessing steps on the processed data. Finally, RFE_Training.ipynb includes further processing, oversampling, feature selection, and model training.
 
